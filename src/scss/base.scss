@@ -31,7 +31,9 @@ $bg-footer-product: #d8dadb;
     &__item{
         cursor: pointer;   
         padding: 0 10px 0 10px;
-        border: none;        
+        border: none;
+        text-align: center;
+        min-width: 50px;
     
         &:hover:not(.nav__item-active){
             border-bottom: 3px solid $bg-footer-product;
@@ -169,10 +171,6 @@ $bg-footer-product: #d8dadb;
         position: absolute;
         top: 33px;
         left: 70px;       
-    }
-
-    .nav__item {
-        width: 40%;
     }
 
     .header {
