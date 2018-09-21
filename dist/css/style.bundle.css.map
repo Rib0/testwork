@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/scss/src/scss/base.scss"],"names":[],"mappings":"AAEA;EACC,iBAHc,EAId","file":"./css/style.bundle.css","sourcesContent":["$bg-color: pink;\r\n\r\nbody {\r\n background: $bg-color;\r\n}"],"sourceRoot":""}

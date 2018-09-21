@@ -1,0 +1,33 @@
+{
+  "name": "testwork",
+  "version": "1.0.0",
+  "description": "1. Форкнуть этот репозиторий к себе\r 2. Заверстать страницу по картинкам в папке mockup:\r     - `1.png` - версия для компьютеров\r     - `2.png` - версия для компьютеров с hover, focus\r     - `3.png` - мобильная версия\r     - Картинки для использования лежат в папке `src/img`",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rib0/testwork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rib0/testwork/issues"
+  },
+  "homepage": "https://github.com/Rib0/testwork#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  }
+}

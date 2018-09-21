@@ -1,0 +1,26 @@
+$color-header:  #7f7f7f;
+
+body, ul{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+li{
+    list-style-type: none;
+    user-select: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: $color-header;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $color-header;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $color-header;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $color-header;
+}
+
