@@ -5,12 +5,6 @@ $bg-header: #f8f8f8;
 $color-header:  #7f7f7f;
 $bg-footer-product: #d8dadb;
 
-.wrapper{
-    max-width: 1700px;
-    min-width: 500px;
-    margin: 0 auto;
-}
-
 .header{
     width: $default-width;
     margin: 0 auto;
@@ -34,7 +28,6 @@ $bg-footer-product: #d8dadb;
         padding: 0 10px 0 10px;
         border: none;
         text-align: center;
-        min-width: 50px;
     
         &:hover:not(.nav__item-active){
             border-bottom: 3px solid $bg-footer-product;
@@ -55,12 +48,9 @@ $bg-footer-product: #d8dadb;
         height: 23px;       
         overflow: hidden;
         position: absolute;
-        top: 24px;        
+        top: 24px;
+        background: url("/src/svg/icons-16.svg"); 
     }
-}
-
-.svg-active{
-    margin-top: -24px;
 }
 
 .search__input{
@@ -71,10 +61,15 @@ $bg-footer-product: #d8dadb;
     padding-bottom: 23px;
     padding-left: 30px;
     width: 100%;
+    box-sizing: border-box;
 
     &:focus{
         outline: none;
         border-bottom: 3px solid #43b6e2;
+    }
+
+    &:focus ~ div.search__svg{
+        background-position: 0 -24px;
     }
 }
 
@@ -92,7 +87,7 @@ $bg-footer-product: #d8dadb;
     border-radius: 7px;
     overflow: hidden;
     color: black;
-    box-sizing: border-box;  
+    box-sizing: border-box;
 
     &__img{
         display: block;
@@ -128,8 +123,6 @@ $bg-footer-product: #d8dadb;
     }
 }
 
-
-
 @media screen and (max-width: 850px) {
     .product {
         width: 48%;
@@ -140,46 +133,49 @@ $bg-footer-product: #d8dadb;
         color: black;
         box-sizing: border-box; 
     }
+
+    .search{
+        width: 40%;
+    }
+
+    .nav__item:last-child{
+        margin-right: 10px;
+    }
 }
 
 @media screen and (max-width: 560px) {
-
-    .wrapper, .search {
+    .search {
         width: 100%;
-    }
 
-    .search__input {
-        display: block;
-        margin: 0 auto;
-        width: 90%;       
-        background: white;
-        border: 3px solid $bg-footer-product;
-        box-sizing: border-box;
-        padding-bottom: 23px;
-        padding-left: 30px;
-        padding: 15px 0 15px 30px;
-        border-radius: 5px;
+        &__input{
+            display: block;
+            margin: 0 auto;
+            width: 90%;       
+            background: white;
+            border: 3px solid $bg-footer-product;
+            box-sizing: border-box;
+            padding-bottom: 23px;
+            padding-left: 30px;
+            padding: 15px 0 15px 30px;
+            border-radius: 5px;
 
-        &:focus{          
-            border: 3px solid #43b6e2;         
+            &:focus{          
+                border: 3px solid #43b6e2;         
+            }
+        }
+
+        &__svg{
+            left: 13.5%;
+            top: 33px;
         }
     }
 
-    .search__svg {
-        width: 23px;
-        height: 23px;       
-        overflow: hidden;
-        position: absolute;
-        top: 33px;
-        left: 70px;       
-    }
-
-    .header {
+    .header{
         flex-direction: column-reverse;
         padding-top: 20px;
     }
 
-    .product {
+    .product{
         width: 100%;
         border: 1px solid #f4f4f4;   
         margin-bottom: 27px;
@@ -187,6 +183,10 @@ $bg-footer-product: #d8dadb;
         overflow: hidden;
         color: black;
         box-sizing: border-box; 
+    }
+
+    .nav{
+        overflow: scroll;
     }
 }
 

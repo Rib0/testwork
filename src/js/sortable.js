@@ -1,60 +1,26 @@
 
 var li = document.querySelectorAll("li.nav__item"),
-    products = document.getElementsByClassName("product"),
-    curMenuItem = 0
-
-
-function checkItems() {
-    switch(curMenuItem) {
-        case 0:
-            Array.prototype.forEach.call(products, function (item) {               
-                item.classList.remove("product-hidden")      
-            })
-        break;
-
-        case 1:
-            Array.prototype.forEach.call(products, function (item) {
-                if (item.dataset.type != 1) {
-                   item.classList.add("product-hidden")
-                }
-                else {                   
-                    item.classList.remove("product-hidden")                   
-                }              
-            })
-        break;
-
-        case 2:
-            Array.prototype.forEach.call(products, function (item) {
-                if (item.dataset.type != 3) {
-                    item.classList.add("product-hidden")
-                }
-                else {                    
-                    item.classList.remove("product-hidden")      
-                }
-            })
-        break;
-
-        case 3:
-            Array.prototype.forEach.call(products, function (item) {
-                if (item.dataset.type != 2) {
-                    item.classList.add("product-hidden")
-                }
-                else {              
-                    item.classList.remove("product-hidden")      
-                }
-            })
-        break;
-    }
-}
+    products = document.getElementsByClassName("product")
 
 Array.prototype.forEach.call(li, (item, index)=> {
-    item.addEventListener("click", function () {     
-        li.forEach((item)=> {
+    item.addEventListener("click", function () {
+        Array.prototype.forEach.call(li, (item)=> {
             item.classList.remove("nav__item-active")
         })
         this.classList.add("nav__item-active")
-        curMenuItem = index
-        checkItems();  
+        if (index === 0) { //если выбрали пункт "все" - показать все товары и завершить функцию
+            Array.prototype.forEach.call(products, (item)=> {
+                item.classList.remove("product-hidden")
+            })
+            return
+        }
+        for (var i = 0; i < products.length; i++) { //иначе
+            if (products[i].dataset.type == index){ //проверяем тип всех товаров,если он равен типу выбранного
+                products[i].classList.remove("product-hidden") //показываем этот товар
+                continue
+            }
+            products[i].classList.add("product-hidden") //если не равен, скрываем товар
+        }
     })
 })
 
